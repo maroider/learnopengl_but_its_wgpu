@@ -4,7 +4,9 @@ version = "0.1.0"
 authors = ["Markus Røyset <maroider@protonmail.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "00-01-hello-triangle"
+path = "00-getting-started/01-hello-triangle/main.rs"
 
 [dependencies]
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
