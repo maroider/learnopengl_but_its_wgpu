@@ -16,6 +16,10 @@ path = "00-getting-started/01-hello-triangle/main.rs"
 name = "00-01-hello-triangle-rectangle"
 path = "00-getting-started/01-hello-triangle/rectangle.rs"
 
+[[bin]]
+name = "00-01-hello-triangle-exercise-2"
+path = "00-getting-started/01-hello-triangle/exercise-2.rs"
+
 [dependencies]
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
 shaderc = "0.6.1"
