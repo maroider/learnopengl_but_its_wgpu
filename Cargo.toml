@@ -30,6 +30,10 @@ path = "00-getting-started/01-hello-triangle/exercise-3.rs"
 name = "00-03-textures"
 path = "00-getting-started/03-textures/main.rs"
 
+[[bin]]
+name = "00-03-textures-exercise-1"
+path = "00-getting-started/03-textures/exercise-1.rs"
+
 [dependencies]
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
 shaderc = "0.6.1"
