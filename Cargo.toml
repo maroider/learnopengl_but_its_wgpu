@@ -38,6 +38,12 @@ path = "00-getting-started/03-textures/exercise-1.rs"
 name = "00-03-textures-exercise-2"
 path = "00-getting-started/03-textures/exercise-2.rs"
 
+## Transformations
+
+[[bin]]
+name = "00-04-transformations"
+path = "00-getting-started/04-transformations/main.rs"
+
 [dependencies]
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
 shaderc = "0.6.1"
