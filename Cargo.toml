@@ -44,9 +44,19 @@ path = "00-getting-started/03-textures/exercise-2.rs"
 name = "00-04-transformations"
 path = "00-getting-started/04-transformations/main.rs"
 
+# Lighting
+
+## Colors
+
+[[bin]]
+name = "01-00-colors"
+path = "01-lighting/00-colors/main.rs"
+
 [dependencies]
+amethyst_input = { git = "https://github.com/maroider/amethyst/", branch = "amethyst_input-decoupling-and-update-winit", default-features = false }
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
 shaderc = "0.6.1"
+shrev = "1.1.1"
 ultraviolet = "0.4.5"
 wgpu = "0.4.0"
 winit = "0.21.0"
