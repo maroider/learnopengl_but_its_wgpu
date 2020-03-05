@@ -416,9 +416,9 @@ fn main() {
                             load_op: wgpu::LoadOp::Clear,
                             store_op: wgpu::StoreOp::Store,
                             clear_color: wgpu::Color {
-                                r: 0.0,
-                                g: 0.0,
-                                b: 0.0,
+                                r: 0.1,
+                                g: 0.1,
+                                b: 0.1,
                                 a: 1.0,
                             },
                         }],
