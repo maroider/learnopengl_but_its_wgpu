@@ -12,47 +12,47 @@ const DEPTH_FORMAT: wgpu::TextureFormat = wgpu::TextureFormat::Depth32Float;
 
 #[rustfmt::skip]
 const VERTICES: &[Vertex] = &[
+   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
    Vertex { translation: Vec3 { x: -0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
 
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
 
    Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
    Vertex { translation: Vec3 { x: -0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
 
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
 
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
    Vertex { translation: Vec3 { x:  0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
    Vertex { translation: Vec3 { x: -0.5, y: -0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y: -0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
 
-   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
    Vertex { translation: Vec3 { x:  0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 1.0, y: 1.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
-   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
    Vertex { translation: Vec3 { x: -0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x:  0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 1.0, y: 0.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z: -0.5, }, uv: Vec2 { x: 0.0, y: 1.0, } },
+   Vertex { translation: Vec3 { x: -0.5, y:  0.5, z:  0.5, }, uv: Vec2 { x: 0.0, y: 0.0, } },
 ];
 
 #[rustfmt::skip]
