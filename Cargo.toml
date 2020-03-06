@@ -52,6 +52,12 @@ path = "00-getting-started/04-transformations/main.rs"
 name = "01-00-colors"
 path = "01-lighting/00-colors/main.rs"
 
+# Basic Lighting
+
+[[bin]]
+name = "01-01-basic-lighting"
+path = "01-lighting/01-basic-lighting/main.rs"
+
 [dependencies]
 amethyst_input = { git = "https://github.com/maroider/amethyst/", branch = "amethyst_input-decoupling-and-update-winit", default-features = false }
 image = { version = "0.23.0", default-features = false, features = ["png", "jpeg"] }
