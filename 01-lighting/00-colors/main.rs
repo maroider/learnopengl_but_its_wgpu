@@ -74,7 +74,7 @@ const LIGHT_SOURCES: &[Instance] = &[
             Vec4 { x:  0.2, y:  0.0,  z:  0.0, w:  0.0 },
             Vec4 { x:  0.0, y:  0.2,  z:  0.0, w:  0.0 },
             Vec4 { x:  0.0, y:  0.0,  z:  0.2, w:  0.0 },
-            Vec4 { x:  1.2, y:  1.0,  z: -2.0, w:  1.0 },
+            Vec4 { x:  1.2, y:  1.0,  z:  2.0, w:  1.0 },
         ]
     }},
 ];
@@ -162,9 +162,9 @@ fn main() {
     let mut input_handler = InputHandler::<StringBindings>::new();
 
     let mut camera = Camera {
-        translation: Vec3::new(0.0, 0.0, -3.0),
+        translation: Vec3::new(0.0, 0.0, 3.0),
         pitch: 0.0,
-        yaw: 0.0,
+        yaw: std::f32::consts::PI,
         roll: 0.0,
         movement_speed: 0.1,
         mouse_sensitivity: 0.0025,
