@@ -193,9 +193,14 @@ fn main() {
         }],
     });
 
+    // Use `Vec4` instead of `Vec3` because of aligment.
+    // TOOD: Investigate if using a struct annotated with `#[repr(align(16))]` fixes this (spoiler: it probably will).
     let fragment_uniform_buffer = device
         .create_buffer_mapped(2, wgpu::BufferUsage::UNIFORM | wgpu::BufferUsage::COPY_DST)
-        .fill_from_slice(&[Vec3::new(1.0, 0.5, 0.31), Vec3::new(1.0, 1.0, 1.0)]);
+        .fill_from_slice(&[
+            Vec4::new(1.0, 0.5, 0.31, 0.0),
+            Vec4::new(1.0, 1.0, 1.0, 0.0),
+        ]);
 
     let fragment_uniform_bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
         layout: &fragment_uniform_bind_group_layout,
