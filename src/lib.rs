@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 use amethyst_input::{Button, InputEvent, InputHandler, ScrollDirection, StringBindings};
 use shrev::{EventChannel, ReaderId};
 use ultraviolet::{Mat4, Rotor3, Vec3};
@@ -106,5 +108,33 @@ impl Camera {
         let z_displacement = yaw.sin() * forward_displacement + yaw.cos() * sideways_displacement;
 
         self.translation += Vec3::new(x_displacement, y_displacement, z_displacement);
+    }
+}
+
+/// Ensures that the amount of memory (in bytes) consumed by the wrapped type `T` will always be a multiple of 16.
+///
+/// ```
+/// # use std::mem;
+/// #
+/// # use learnopengl_but_its_wgpu::Align16;
+/// #
+/// assert_eq!(4, mem::size_of::<u32>()));
+/// assert_eq!(16, mem::size_of::<Align16<u32>>()));
+/// assert_eq!(16, mem::size_of::<u128>()));
+/// assert_eq!(16, mem::size_of::<Align16<u128>>()));
+/// assert_eq!(20, mem::size_of::<[u32; 5]>()));
+/// assert_eq!(32, mem::size_of::<Align16<[u32; 5]>>()));
+/// ```
+#[repr(C)]
+#[repr(align(16))]
+#[derive(Clone, Copy, Debug)]
+pub struct Align16<T: Clone + Copy + Debug>(pub T);
+
+impl<T> From<T> for Align16<T>
+where
+    T: Clone + Copy + Debug,
+{
+    fn from(from: T) -> Self {
+        Self(from)
     }
 }
