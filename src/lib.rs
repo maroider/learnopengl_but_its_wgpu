@@ -28,6 +28,15 @@ impl Camera {
             * Mat4::from_translation(self.translation)
     }
 
+    pub fn get_direction_vector(&self) -> Vec3 {
+        Vec3 {
+            x: -self.yaw.sin() * self.pitch.cos(),
+            y: -self.pitch.sin(),
+            z: -self.yaw.cos() * self.pitch.cos(),
+        }
+        .normalized()
+    }
+
     pub fn on_event(&mut self, event_channel: &EventChannel<InputEvent<StringBindings>>) {
         if !self.is_controlled {
             return;
