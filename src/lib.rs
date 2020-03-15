@@ -56,7 +56,7 @@ impl Camera {
                     if self.yaw > 2.0 * std::f32::consts::PI {
                         self.yaw -= 2.0 * std::f32::consts::PI;
                     } else if self.yaw < 0.0 {
-                        self.yaw = 2.0 * std::f32::consts::PI - self.yaw;
+                        self.yaw = 2.0 * std::f32::consts::PI - -self.yaw;
                     }
                 }
                 InputEvent::MouseWheelMoved(direction) => match direction {
